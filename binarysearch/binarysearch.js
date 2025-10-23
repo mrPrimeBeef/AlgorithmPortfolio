@@ -1,12 +1,44 @@
-function binarySearch(searchFor, values){
-return 
+const values = [21, 22, 23, 25, 27, 28, 29, 31, 32, 34, 35];
+
+function binarySearch(searchFor, values) {
+  let found = false;
+  let count = 0;
+
+  values = values.sort((a, b) => a - b);
+
+  console.log(values);
+
+  let min = 0;
+  let max = values.length - 1;
+  //Index
+  let middle = max - Math.floor((max - min) / 2);
+
+  while (!found) {
+    middle = max - Math.floor((max - min) / 2);
+
+    if (values[middle] == searchFor) {
+      found = true;
+      break;
+    }
+    if (values[middle] > searchFor) {
+      console.log("Too High: " + values[middle]);
+      max = middle - 1;
+    }
+    if (values[middle] < searchFor) {
+      console.log("Too Low: " + values[middle]);
+      min = middle + 1;
+    }
+
+    if (max - min < 0) {
+      return -1;
+    }
+
+    count++;
+    console.log("Count: " + count);
+  }
+  return middle;
 }
 
-// - `found` - en boolean der indikerer om searchFor blev fundet eller ej
-// - `index` - et number der angiver hvilket index værdien blev fundet på, eller `-1` hvis den ikke blev fundet.
-// - `iterations` - et number der angiver antallet af iterationer funktionen gennemløb før den enten fandt, eller opgav at finde værdien.
-
-// den skal gå ud fra at arrayet er sorteret - den må gerne fejle, altså returnere !found og index -1 hvis den skal søge i et usorteret array. Men ikke gå ind i et uendeligt loop eller crashe på anden vis.
-
+console.log(binarySearch(20, values));
 
 // npx mocha -> to run test.js
