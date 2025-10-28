@@ -1,11 +1,9 @@
 const values = [21, 22, 23, 25, 27, 28, 29, 31, 32, 34, 35];
 
-export function binarySearch(searchFor, values) {
+export function binarySearch(searchFor, values, logger) {
   let found = false;
   let iterations = 1;
   // values = values.sort((a, b) => a - b);
-
-  // console.log(values);
 
   let min = 0;
   let max = values.length - 1;
@@ -20,11 +18,11 @@ export function binarySearch(searchFor, values) {
       break;
     }
     if (values[middle] > searchFor) {
-      // console.log("Too High: " + values[middle]);
+      logger("Too High: " + values[middle]);
       max = middle - 1;
     }
     if (values[middle] < searchFor) {
-      // console.log("Too Low: " + values[middle]);
+      logger("Too Low: " + values[middle]);
       min = middle + 1;
     }
 
@@ -34,11 +32,11 @@ export function binarySearch(searchFor, values) {
     }
 
     iterations++;
-    // console.log("Count: " + iterations);
+    logger("Count: " + iterations);
   }
-  return {found, index: found?middle:-1, iterations};
+  return { found, index: found ? middle : -1, iterations };
 }
-
-console.log(binarySearch(241, values));
+// const logger = function () {};
+console.log(binarySearch(241, values, logger()));
 
 // npx mocha -> to run test.js
