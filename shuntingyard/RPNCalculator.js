@@ -51,6 +51,12 @@ export function RPNCal(input) {
 
 const infixNotion = "2 + 3 * 4";
 
+// 15
+const infixNotion2 = "3 + 4 * ( 5 - 2 )";
+
+//  240
+const infixNotion3 = "( 12 + 3 ) * ( 7 + 9 )";
+
 const precedence = {
   "^": 5,
   "*": 4,
@@ -68,9 +74,19 @@ function ShuntingYard(input) {
   while (queue.length > 0) {
     let element = queue.shift();
 
-    if (isNaN(Number(element))) {
-      while (operatorStack.size() > 0 && 
-             precedence[operatorStack.peek()] >= precedence[element]) {
+    if (element === "(") {
+      
+    } else if (element === ")") {
+      while (operatorStack.size() > 0 && operatorStack.peek() !== "(") {
+        numberQueue.enqueue(operatorStack.pop());
+      }
+      operatorStack.pop();
+    } else if (isNaN(Number(element))) {
+      while (
+        operatorStack.size() > 0 &&
+        operatorStack.peek() !== "(" &&
+        precedence[operatorStack.peek()] >= precedence[element]
+      ) {
         numberQueue.enqueue(operatorStack.pop());
       }
       operatorStack.push(element);
@@ -90,5 +106,5 @@ function ShuntingYard(input) {
   return result;
 }
 
-console.log(ShuntingYard(infixNotion));
-console.log(RPNCal(ShuntingYard(infixNotion)));
+console.log(ShuntingYard(infixNotion3));
+console.log(RPNCal(ShuntingYard(infixNotion3)));
