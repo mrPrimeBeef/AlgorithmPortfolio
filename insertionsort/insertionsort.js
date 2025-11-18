@@ -3,24 +3,21 @@
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
 export function insertionSort(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    let count = 0;
-    while (arr.length - 1 > count) {
-      let current = arr[count];
-      let next = arr[count + 1];
-      if (!(current <= next)) {
-        swap(arr, count, count + 1);
-      }
+  let iterations = 0;
+  
+  for (let i = 1; i < arr.length; i++) {
+    let key = arr[i];
+    let j = i - 1;
 
-      function swap(arr, a, b) {
-        let temp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = temp;
-      }
-      count++;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
+      iterations++;
     }
+    arr[j + 1] = key;
   }
-  return arr;
+  
+  return { arr: arr, iterations: iterations, sorted: true };
 }
 
-console.log(simpleSort(arr));
+console.log(insertionSort(arr));
