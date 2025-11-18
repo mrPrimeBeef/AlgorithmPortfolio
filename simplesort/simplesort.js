@@ -1,5 +1,3 @@
-import { isSorted } from "../issorted/issorted.js";
-
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
 export function simpleSort(arr) {
@@ -16,7 +14,6 @@ export function simpleSort(arr) {
         let temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
-        //   console.log(arr);
       }
       count++;
     }
