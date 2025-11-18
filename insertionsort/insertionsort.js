@@ -1,4 +1,4 @@
-// implemented with swapping
+// implemented with shifting 
 
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
@@ -21,3 +21,6 @@ export function insertionSort(arr) {
 }
 
 console.log(insertionSort(arr));
+
+
+// implemented with swapping -> 
