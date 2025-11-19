@@ -19,5 +19,5 @@ we need to "shrink" the array so we need end, start and swappped variables, but:
 if the array is sorted, it doesn't move anything and only touchs n elements. In the average and worst cases, cocktail sort makes multiple passes through the array. On each pass, it compares adjacent elements and swaps them if they're out of order. You need roughly n passes, and each pass touches roughly n elements, giving you n × n = O(n²) comparisons and swaps. (the average case is properly a little less because doesn't travel all the way each time because we know with each pass that the ends are sorted).
 
 ## Links: 
-link wiki - https://en.wikipedia.org/wiki/Cocktail_shaker_sort
+link wiki - https://en.wikipedia.org/wiki/Cocktail_shaker_sort \
 link gfg - https://www.geeksforgeeks.org/dsa/cocktail-sort/
