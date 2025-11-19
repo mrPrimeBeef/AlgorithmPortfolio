@@ -1,4 +1,8 @@
+import { isSorted } from "../issorted/issorted.js";
+
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
+
+let iterations = 0;
 
 export function cocktailShakerSort(arr) {
   function swap(arr, high, low) {
@@ -20,6 +24,7 @@ export function cocktailShakerSort(arr) {
       if (current > next) {
         swap(arr, i, i + 1);
         swapped = true;
+        iterations++;
       }
     }
 
@@ -35,12 +40,13 @@ export function cocktailShakerSort(arr) {
       if (current < next) {
         swap(arr, i - 1, i);
         swapped = true;
+        iterations++;
       }
     }
     start++;
   }
 
-  return arr;
+  return { arr: arr, iterations: iterations, sorted: isSorted(arr) };
 }
 
 console.log(cocktailShakerSort(arr));

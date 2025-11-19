@@ -30,7 +30,7 @@ function merge(arrA, arrB) {
   return newArr;
 }
 
-export function mergeSort(arr) {
+export function mergeSort(arr, iterations, sorted) {
   if (arr.length <= 1) {
     return arr;
   }
@@ -41,8 +41,13 @@ export function mergeSort(arr) {
 
   let sortedLeft = mergeSort(left);
   let sortedRight = mergeSort(right);
+  
 
   return merge(sortedLeft, sortedRight);
 }
 
 console.log(mergeSort(arr));
+
+// - `arr` - det nu sorterede array (ikke det samme som der blev modtaget)
+// - `iterations` - antallet af iterationer (rekursioner OG loops)
+// - `sorted` -
