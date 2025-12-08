@@ -65,6 +65,10 @@ const precedence = {
   "-": 1,
 };
 
+// numbers in queue and operators on stack
+// if operator preceence is higher that stack head -> pop stack head
+// if operator is closing ")" (the one who closes the open "(" ) pop all the operators off the stack onto the queue  
+
 function ShuntingYard(input) {
   const queue = input.split(" ");
 
