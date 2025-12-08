@@ -1,6 +1,8 @@
 const values = [21, 22, 23, 25, 27, 28, 29, 31, 32, 34, 35];
 
-export function binarySearch(searchFor, values, logger) {
+// this signature takes a logger so its easier or log or not
+// export function binarySearch(searchFor, values, logger)
+export function binarySearch(searchFor, values) {
   let found = false;
   let iterations = 1;
   // values = values.sort((a, b) => a - b);
@@ -36,7 +38,7 @@ export function binarySearch(searchFor, values, logger) {
   }
   return { found, index: found ? middle : -1, iterations };
 }
-// const logger = function () {};
-console.log(binarySearch(241, values, logger()));
+const logger = console.log;
+console.log(binarySearch(28, values, logger));
 
 // npx mocha -> to run test.js
