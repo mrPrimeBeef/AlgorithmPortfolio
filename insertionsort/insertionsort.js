@@ -1,9 +1,12 @@
 import { isSorted } from "../issorted/issorted.js";
 
-// implemented with shifting
+// Big O = O(n^2) loop in loop
+
+
 
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
+// implemented with shifting
 export function insertionSortShift(arr) {
   let iterations = 0;
 

@@ -1,5 +1,9 @@
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
+// Big O = O(n*(log n))
+// touches all element while loop O(n)
+// stack call Log n -> binary tree
+
 function merge(arrA, arrB) {
   const newArrSize = arrA.length + arrB.length;
   let newArr = new Array(newArrSize);
