@@ -75,6 +75,7 @@ function ShuntingYard(input) {
   let numberQueue = new Queue();
   let operatorStack = new Stack();
 
+  // shift first element
   while (queue.length > 0) {
     let element = queue.shift();
 
@@ -85,6 +86,8 @@ function ShuntingYard(input) {
         numberQueue.enqueue(operatorStack.pop());
       }
       operatorStack.pop();
+      // if operator 
+      // Number tries to convert element to number
     } else if (isNaN(Number(element))) {
       while (
         operatorStack.size() > 0 &&
