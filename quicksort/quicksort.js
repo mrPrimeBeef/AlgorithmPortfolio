@@ -1,3 +1,5 @@
+// Big O = O (n*log n)
+
 let iterations = 0;
 export function quicksort(arr, low = 0, high) {
   if (low >= high) {
