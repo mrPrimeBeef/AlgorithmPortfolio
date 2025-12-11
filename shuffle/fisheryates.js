@@ -8,6 +8,10 @@ const arrays = [
   [4, 4, 4, 4, 4, 4, 4],
 ];
 
+// In-place shuffle
+// Time: O(n)
+// Space: O(1)
+
 export function shuffle(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     let j = i + Math.floor(Math.random() * (arr.length - i));

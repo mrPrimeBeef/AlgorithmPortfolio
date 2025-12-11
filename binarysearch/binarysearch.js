@@ -1,5 +1,9 @@
 const values = [21, 22, 23, 25, 27, 28, 29, 31, 32, 34, 35];
 
+
+// Time: O(log n)
+// Space: O(1) hvis iterativ, O(log n) hvis rekursiv (stakken)
+
 // this signature takes a logger so its easier or log or not
 // export function binarySearch(searchFor, values, logger)
 export function binarySearch(searchFor, values) {
