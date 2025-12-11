@@ -38,7 +38,7 @@ function partition(arr, low, high) {
       swap(arr, i, j);
     }
   }
-  // swaps pivot to correct place - i + 1 (look at loop for i value)
+  // swaps pivot to correct place - i + 1 (look at loop for i value) i is last element smaller than pivot - if none, i +1 makes pivot start arr
   swap(arr, i + 1, high);
   return i + 1;
 }
