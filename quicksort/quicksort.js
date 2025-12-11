@@ -53,4 +53,3 @@ let arr = [10, 7, 8, 9, 1, 5, 10, 3, 5, 6, 7, 1, 90];
 
 console.log(arr);
 console.log(quicksort(arr));
-console.log(`iterations: ${iterations}`);
