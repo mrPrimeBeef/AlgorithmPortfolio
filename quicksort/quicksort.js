@@ -1,7 +1,15 @@
 // Big O = O (n*log n)
 
 let iterations = 0;
-export function quicksort(arr, low = 0, high) {
+
+export function quicksort(arr) {
+  const low = 0;
+  const high = arr.length-1;
+  quicksortRecursive(arr, low, high);
+  return arr;
+}
+
+export function quicksortRecursive(arr, low = 0, high) {
   if (low >= high) {
     return;
   }
@@ -10,8 +18,10 @@ export function quicksort(arr, low = 0, high) {
 
   let pi = partition(arr, low, high);
 
-  quicksort(arr, low, pi - 1);
-  quicksort(arr, pi + 1, high);
+  //Left smaller than last pivot
+  quicksortRecursive(arr, low, pi - 1);
+  // right larger than last pivot
+  quicksortRecursive(arr, pi + 1, high);
 }
 
 function partition(arr, low, high) {
@@ -39,6 +49,5 @@ let arr = [10, 7, 8, 9, 1, 5, 10, 3, 5, 6, 7, 1, 90];
 let n = arr.length;
 
 console.log(arr);
-quicksort(arr, 0, n - 1);
-console.log(arr);
+console.log(quicksort(arr));
 console.log(`iterations: ${iterations}`);
