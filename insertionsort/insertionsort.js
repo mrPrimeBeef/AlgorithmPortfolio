@@ -1,6 +1,8 @@
 import { isSorted } from "../issorted/issorted.js";
 
-// Big O = O(n^2) loop in loop
+// Space: O(1) Time: Big O = O(n^2) loop in loop
+// works very well on almost sorted arrays
+// Stabel
 
 
 

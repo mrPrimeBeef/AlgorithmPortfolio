@@ -1,7 +1,7 @@
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
 // More or less BubbleSort
-// Big O = O (n^2)
+// Space: O(1) Time: Big O = O (n^2)
 // touches almost every element each times it sorts (loop in loop)
 
 export function simpleSort(arr) {

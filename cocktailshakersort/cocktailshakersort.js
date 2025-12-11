@@ -4,7 +4,8 @@ const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
 let iterations = 0;
 
-// Big O = O(n^2) touches elements n * n (loop in loop)
+// Space: O(1) Time: Big O = O(n^2) touches elements n * n (loop in loop)
+// Stabel
 
 export function cocktailShakerSort(arr) {
   function swap(arr, high, low) {

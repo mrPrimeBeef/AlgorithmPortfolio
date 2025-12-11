@@ -1,6 +1,8 @@
 import { isSorted } from "../issorted/issorted.js";
 
-// Big O = O (n*log n)
+// Space: O(log n) i best case, O(n) i worst case Time: Best and average: Big O = O (n*log n) worst O(n^2) bad pivot
+// not stabel
+// worst case is sorted array
 
 let iterations = 0;
 
@@ -49,7 +51,9 @@ function swap(arr, a, b) {
   arr[b] = temp;
 }
 
-let arr = [10, 7, 8, 9, 1, 5, 10, 3, 5, 6, 7, 1, 90];
+const arr = [10, 7, 8, 9, 1, 5, 10, 3, 5, 6, 7, 1, 90];
 
-console.log(arr);
-console.log(quicksort(arr));
+const arr2 = [1,2,3,4,5];
+
+console.log(arr2);
+console.log(quicksort(arr2));

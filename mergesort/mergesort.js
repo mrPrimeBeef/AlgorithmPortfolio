@@ -1,6 +1,8 @@
 const arr = [1, 8, 9, 4, 6, 7, 2, 5, 3];
 
-// Big O = O(n*(log n))
+// Space: O(n) Time: Big O = O(n*(log n))
+// stabel -> does change elements of same size
+// allways worst case
 // touches all element while loop O(n)
 // stack call Log n -> binary tree
 
