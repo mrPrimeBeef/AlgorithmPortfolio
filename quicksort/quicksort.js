@@ -1,3 +1,5 @@
+import { isSorted } from "../issorted/issorted.js";
+
 // Big O = O (n*log n)
 
 let iterations = 0;
@@ -6,7 +8,7 @@ export function quicksort(arr) {
   const low = 0;
   const high = arr.length-1;
   quicksortRecursive(arr, low, high);
-  return arr;
+  return {arr, iterations, sorted: isSorted(arr)};
 }
 
 export function quicksortRecursive(arr, low = 0, high) {
@@ -15,6 +17,7 @@ export function quicksortRecursive(arr, low = 0, high) {
   }
 
   iterations++;
+
 
   let pi = partition(arr, low, high);
 
@@ -35,6 +38,7 @@ function partition(arr, low, high) {
       swap(arr, i, j);
     }
   }
+  // swaps pivot to correct place - i + 1 (look at loop for i value)
   swap(arr, i + 1, high);
   return i + 1;
 }
@@ -46,7 +50,6 @@ function swap(arr, a, b) {
 }
 
 let arr = [10, 7, 8, 9, 1, 5, 10, 3, 5, 6, 7, 1, 90];
-let n = arr.length;
 
 console.log(arr);
 console.log(quicksort(arr));
